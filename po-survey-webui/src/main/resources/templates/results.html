@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Java Performance Optimozation - Survey Application - Uploaded data</title>
+</head>
+<body>
+    <div align="center" style="width: 80%;">
+        <table align="center">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Country</th>
+                    <th>Expected salary</th>
+                    <th>Gender</th>
+                    <th>Interested answers</th>
+                    <th>Professional</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="respondent : ${respondents}">
+                    <td th:text="${respondent.id}"></td>
+                    <td th:text="${respondent.country}"></td>
+                    <td th:text="${respondent.expectedSalary}"></td>
+                    <td th:text="${respondent.gender}"></td>
+                    <td th:text="${respondent.interestedAnswers}"></td>
+                    <td th:text="${respondent.professional}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div align="center" style="width: 80%;">
+        <a href="/">Upload page</a>
+    </div>
+
+</body>
+</html>

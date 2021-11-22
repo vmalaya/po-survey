@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Java Performance Optimozation - Survey Application</title>
+</head>
+<body>
+    <div align="center" style="width: 80%; height: 100px;">
+        <p th:text="${message}" th:if="${message ne null}"></p>
+    </div>
+    <div align="center" style="width: 80%;">
+        <form method="post" th:action="@{/upload}" enctype="multipart/form-data">
+            <input type="file" name="file" />
+            <button type="submit">UploadFile</button>
+        </form>
+    </div>
+    <div align="center" style="width: 80%;">
+        <a href="/results">Uploaded data</a>
+    </div>
+</body>
+</html>

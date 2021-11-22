@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <changeSet id="1" author="rk">
+        <createTable tableName="assess">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" />
+            </column>
+            <column name="assess_job_commute" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="assess_job_compensation" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="assess_job_dept" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="assess_job_diversity" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="assess_job_exp" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="assess_job_finances" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="assess_job_industry" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="assess_job_leaders" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="assess_job_office" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="assess_job_product" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="assess_job_prof_devel" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="assess_job_projects" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="assess_job_remote" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="assess_job_role" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="assess_job_tech" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+        <createTable tableName="company_size">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" />
+            </column>
+            <column name="size" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="size_class" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+        <createTable tableName="country">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" />
+            </column>
+            <column name="country_name" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+        <createTable tableName="education">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" />
+            </column>
+            <column name="cousin_education" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="education_important" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="education_types" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="formal_education" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="highest_education_parents" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="major_undergrad" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="self_taught_types" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="time_after_bootcamp" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="university" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+        <createTable tableName="employment">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" />
+            </column>
+            <column name="career_satisfaction" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="company_size" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="company_type" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="developer_type" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="employment_status" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="home_remote" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="job_satisfaction" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="mobile_developer_type" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="non_developer_type" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="web_developer_type" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="years_coded_job" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="years_coded_job_past" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="years_program" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+        <createTable tableName="equipment">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" />
+            </column>
+            <column name="equipment_satisfiedcpu" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="equipment_satisfied_monitors" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="equipment_satisfiedram" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="equipment_satisfiedrw" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="equipment_satisfied_storage" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+        <createTable tableName="ex_coder">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" />
+            </column>
+            <column name="ex_coder10years" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ex_coder_active" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ex_coder_balance" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ex_coder_belonged" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ex_coder_not_for_me" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ex_coder_return" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ex_coder_skills" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ex_coder_will_not_code" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+        <createTable tableName="experience_level">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" />
+            </column>
+            <column name="level" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="years_program" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+        <createTable tableName="have_worked_and_want">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" />
+            </column>
+            <column name="have_worked_database" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="have_worked_framework" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="have_worked_language" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="have_worked_platform" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="want_work_database" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="want_work_framework" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="want_work_language" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="want_work_platform" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+        <createTable tableName="important_hiring">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" />
+            </column>
+            <column name="important_hiring_algorithms" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="important_hiring_communication" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="important_hiring_companies" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="important_hiring_education" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="important_hiring_getting_things_done" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="important_hiring_open_source" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="important_hiringPMExp" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="important_hiring_rep" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="important_hiring_tech_exp" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="important_hiring_titles" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="learned_hiring" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+        <createTable tableName="influence">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" />
+            </column>
+            <column name="influence_cloud" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="influence_communication" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="influence_consultants" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="influence_database" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="influence_dept_tech" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="influence_hardware" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="influence_internet" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="influence_recruitment" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="influence_servers" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="influence_tech_stack" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="influence_viz_tools" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="influence_workstation" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+        <createTable tableName="job_info">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" />
+            </column>
+            <column name="clicky_keys" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="currency" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="hours_per_week" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="important_benefits" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="job_profile" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="job_seeking_status" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="last_new_job" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="overpaid" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="resume_prompted" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="work_start" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+        <createTable tableName="respondent_details">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" />
+            </column>
+            <column name="annoyingUI" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="boring_details" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="building_things" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="challenge_myself" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="change_world" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="compete_peers" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="diversity_important" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="friends_developers" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="invest_time_tools" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="job_security" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="kinship_developers" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="learning_new_tech" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="problem_solving" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="pronounceGIF" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="right_wrong_way" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="serious_work" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="understand_computers" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="work_pay_care" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+        <createTable tableName="stackoverflow_info">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" />
+            </column>
+            <column name="stack_overflow_ads_distracting" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stack_overflow_ads_relevant" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stack_overflow_answer" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stack_overflow_better" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stack_overflow_community" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stack_overflow_company_page" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stack_overflow_copied_code" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stack_overflow_describes" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stack_overflow_devices" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stack_overflow_found_answer" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stack_overflow_helpful" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stack_overflow_job_listing" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stack_overflow_job_search" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stack_overflow_make_money" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stack_overflow_meta_chat" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stack_overflow_moderation" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stack_overflow_new_question" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stack_overflow_satisfaction" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stack_overflow_what_do" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+        <createTable tableName="technical_details">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" />
+            </column>
+            <column name="auditory_environment" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="check_in_code" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="collaborate_remote" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="difficult_communication" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="enjoy_debugging" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ide" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="in_the_zone" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="methodology" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="metric_assess" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="other_peoples_code" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="project_management" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ship_it" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="tabs_spaces" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="version_control" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+        <createTable tableName="respondent">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" />
+            </column>
+            <column name="interested_answers" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="country" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="expected_salary" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="gender" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="professional" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="program_hobby" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="questions_confusing" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="questions_interesting" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="race" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="respondent_name" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="salary" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="survey_long" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="assesses_id" type="INT">
+                <constraints nullable="true" foreignKeyName="fk_respondent_assesses" referencedTableName="assess" referencedColumnNames="id" />
+            </column>
+            <column name="education_info_id" type="INT">
+                <constraints nullable="true" foreignKeyName="fk_respondent_education" referencedTableName="education" referencedColumnNames="id" />
+            </column>
+            <column name="employment_info_id" type="INT">
+                <constraints nullable="true" foreignKeyName="fk_respondent_employment" referencedTableName="employment" referencedColumnNames="id" />
+            </column>
+            <column name="equipment_info_id" type="INT">
+                <constraints nullable="true" foreignKeyName="fk_respondent_equipment" referencedTableName="equipment" referencedColumnNames="id" />
+            </column>
+            <column name="ex_coder_info_id" type="INT">
+                <constraints nullable="true" foreignKeyName="fk_respondent_excoder" referencedTableName="ex_coder" referencedColumnNames="id" />
+            </column>
+            <column name="have_worked_and_want_info_id" type="INT">
+                <constraints nullable="true" foreignKeyName="fk_respondent_hww" referencedTableName="have_worked_and_want" referencedColumnNames="id" />
+            </column>
+            <column name="important_hiring_info_id" type="INT">
+                <constraints nullable="true" foreignKeyName="fk_respondent_hiring" referencedTableName="important_hiring" referencedColumnNames="id" />
+            </column>
+            <column name="influence_info_id" type="INT">
+                <constraints nullable="true" foreignKeyName="fk_respondent_influence" referencedTableName="influence" referencedColumnNames="id" />
+            </column>
+            <column name="job_id" type="INT">
+                <constraints nullable="true" foreignKeyName="fk_respondent_job" referencedTableName="job_info" referencedColumnNames="id" />
+            </column>
+            <column name="respondent_details_info_id" type="INT">
+                <constraints nullable="true" foreignKeyName="fk_respondent_details" referencedTableName="respondent_details" referencedColumnNames="id" />
+            </column>
+            <column name="stack_overflow_id" type="INT">
+                <constraints nullable="true" foreignKeyName="fk_respondent_stackowerflow" referencedTableName="stackoverflow_info" referencedColumnNames="id" />
+            </column>
+            <column name="technical_details_info_id" type="INT">
+                <constraints nullable="true" foreignKeyName="fk_respondent_techdetails" referencedTableName="technical_details" referencedColumnNames="id" />
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

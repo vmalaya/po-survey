@@ -62,7 +62,6 @@
                 </executions>
                 <configuration>
                     <environmentVariables>
-                        <DB_LOCATION>${project.build.directory}/database/training</DB_LOCATION>
                         <LOG_DIR>${project.build.directory}/logs</LOG_DIR>
                     </environmentVariables>
                 </configuration>

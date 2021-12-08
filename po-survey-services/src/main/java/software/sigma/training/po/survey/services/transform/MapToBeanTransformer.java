@@ -6,14 +6,11 @@ import org.apache.commons.beanutils.PropertyUtils;
 
 public class MapToBeanTransformer<T> implements Transformer<T> {
 
-    private final TransformerFactory transformerFactory;
-    
     private final ClassConfiguration bindingConfiguration;
     
     private final Class<T> beanClass;
     
-    public MapToBeanTransformer(TransformerFactory factory, ClassConfiguration bindingConfiguration, Class<T> clazz) {
-        this.transformerFactory = factory;
+    public MapToBeanTransformer(ClassConfiguration bindingConfiguration, Class<T> clazz) {
         this.bindingConfiguration = bindingConfiguration;
         this.beanClass = clazz;
     }
@@ -24,9 +21,7 @@ public class MapToBeanTransformer<T> implements Transformer<T> {
             T bean = beanClass.newInstance();
 
             for (String boundProperty : bindingConfiguration.getBoundPropertyNames()) {
-                Class<Object> boundPropertyClass = bindingConfiguration.getBoundPropertyClass(boundProperty);
-                Transformer<Object> propertyTransformer = transformerFactory.getTransformer(boundPropertyClass);
-                Object value = propertyTransformer.transform(source, bindingConfiguration.getKeyName(boundProperty));
+                String value = source.get(bindingConfiguration.getKeyName(boundProperty));
                 PropertyUtils.setProperty(bean, boundProperty, value);
             }
 

@@ -28,8 +28,9 @@ public class TransformerFactoryImpl implements TransformerFactory {
     public <T> Transformer<T> getTransformer(Class<T> clazz) {
         if (String.class.equals(clazz)) {
             return (Transformer<T>) STRING_TRANSFORMER;
-        } if (configuration.getConfiguredClasses().contains(clazz)) {
-            return new MapToBeanTransformer<>(this, configuration.getConfiguration(clazz), clazz);
+        }
+        if (configuration.getConfiguredClasses().contains(clazz)) {
+            return new MapToBeanTransformer<>(configuration.getConfiguration(clazz), clazz);
         }
 
         return (Transformer<T>) EMPTY_TRANSFORMER;

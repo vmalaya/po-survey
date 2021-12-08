@@ -6,4 +6,34 @@
 | --- | ----------- | --- | --- | --- | ---|
 | survey_results_public_100.csv | 182 | 716 | 265 | 2.7 | 54,562 |
 | survey_results_public_500.csv | 878 | 10790 | 629 | 8.3 | 53,758 |
-| survey_results_public_5000.csv | 8695 | 839969 | 5893 | 19.1 | 52,4 |
+| survey_results_public_5000.csv | 8695 | 839969 | 5893 | 12.1 | 52,4 |
+
+## Identify and describe application performance issues and points for performance optimization
+
+### 1. Time-consuming data uploading
+
+#### Description 
+
+Delay is visible even for survey_results_public_500.csv.
+So from user perspective it is hard to wait almost 14 minutes for uploading survey_results_public_5000.csv.
+
+#### Points for performance optimization
+
+- Optimize CSVProcessorServiceImpl
+- Optimize TransformerFactoryImpl
+
+### 2. Time-consuming data displaying
+
+#### Description
+
+Displaying of survey_results_public_5000.csv is noticeable for user, since it takes almost 6 seconds.
+
+#### Points for performance optimization
+
+- Introduce cashing
+- Optimize RespondentsServiceImpl.java
+- Add paging
+
+
+
+

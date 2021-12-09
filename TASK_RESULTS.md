@@ -66,3 +66,43 @@ Details could be found in the table below
 | survey_results_public_100.csv | 182 | 176 | 99 |
 | survey_results_public_500.csv | 878 | 866 | 130 |
 | survey_results_public_5000.csv | 8695 | 66306 | 198 |
+
+### Use saveAll() instead of save() for each object in loop
+
+Refactored process() method in CSVProcessorServiceImpl.java to run 1 query for saving all processed respondents
+instead of running separate query for each respondent.
+
+
+```
+            // before
+            for (CSVRecord record : parser) {
+                Map<String, String> map = record.toMap();
+                Respondent item = transformer.transform(map, null);
+                respondentDao.save(item);
+            }
+            
+            // after
+            ArrayList<Respondent> respondents = new ArrayList<>();
+            for (CSVRecord record : parser) {
+                Map<String, String> map = record.toMap();
+                Respondent item = transformer.transform(map, null);
+                respondents.add(item);
+            }
+            respondentDao.saveAll(respondents);
+```
+
+Results of optimization comparing to initial measurements:
+
+| File name | File size (kb) | upload time reduced on %| displaying time reduced on % |
+| --- | ----------- | --- | --- |
+| survey_results_public_100.csv | 182 | 82,2 | 62 |
+| survey_results_public_500.csv | 878 | 98,6 | 79 |
+| survey_results_public_5000.csv | 8695 | 99,8 | 97 |
+
+Details could be found in the table below
+
+| File name | File size (kb) | upload time (ms)| displaying time (ms) |
+| --- | ----------- | --- | --- |
+| survey_results_public_100.csv | 182 | 127 | the same |
+| survey_results_public_500.csv | 878 | 151 | the same |
+| survey_results_public_5000.csv | 8695 | 1026 | the same |

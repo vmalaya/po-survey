@@ -3,7 +3,7 @@ package software.sigma.training.po.survey.services.impl;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.Map;
+import java.util.*;
 
 import javax.annotation.PostConstruct;
 
@@ -63,12 +63,13 @@ public class CSVProcessorServiceImpl implements CSVProcessorService {
         LOG.debug("Header map: " + parser.getHeaderMap());
         Transformer<Respondent> transformer = transformerFactory.getTransformer(Respondent.class);
         try {
-            int i = 0;
+            ArrayList<Respondent> respondents = new ArrayList<>();
             for (CSVRecord record : parser) {
                 Map<String, String> map = record.toMap();
                 Respondent item = transformer.transform(map, null);
-                respondentDao.save(item);
+                respondents.add(item);
             }
+            respondentDao.saveAll(respondents);
         } catch (TransformerException e) {
             LOG.error("Error during transforming data", e);
         }
